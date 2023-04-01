@@ -6,21 +6,17 @@
   "homepage": "https://github.com/defi-wonderland/solidity-foundry-boilerplate#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/defi-wonderland/solidity-foundry-boilerplate.git"
+    "url": "git+https://github.com/alwaysbegrowing/SlashContracts.git"
   },
   "license": "MIT",
-  "author": "Wonderland",
-  "contributors": [
-    "0xGorilla (https://github.com/0xGorilla)",
-    "0xng (https://github.com/0xng)",
-    "gas1cent (https://github.com/gas1cent)"
-  ],
+  "author": "ABG",
   "scripts": {
     "build": "forge build",
     "build:optimized": "FOUNDRY_PROFILE=optimized forge build",
     "coverage": "forge coverage --match-contract Unit",
     "deploy:mainnet": "bash -c 'source .env && forge script DeployMainnet --rpc-url $MAINNET_RPC --broadcast --private-key $MAINNET_DEPLOYER_PK --verify --etherscan-api-key $ETHERSCAN_API_KEY'",
-    "deploy:rinkeby": "bash -c 'source .env && forge script DeployRinkeby --rpc-url $RINKEBY_RPC --broadcast --private-key $RINKEBY_DEPLOYER_PK --verify --etherscan-api-key $ETHERSCAN_API_KEY'",
+    "populate:goerli": "source .env && forge script Populate --legacy --rpc-url $GOERLI_RPC_URL --broadcast --private-key $GOERLI_DEPLOYER_PK",
+    "deploy:goerli": "source .env && forge script DeployGoerli --legacy --rpc-url $GOERLI_RPC_URL --broadcast --private-key $GOERLI_DEPLOYER_PK --verify --etherscan-api-key $ETHERSCAN_API_KEY",
     "postinstall": "forge install",
     "lint:check": "yarn lint:sol-tests && yarn lint:sol-logic && forge fmt check",
     "lint:fix": "sort-package-json && forge fmt && yarn lint:sol-tests --fix && yarn lint:sol-logic --fix",
