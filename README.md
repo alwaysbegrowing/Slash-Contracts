@@ -1,110 +1,24 @@
-<img src="https://raw.githubusercontent.com/defi-wonderland/brand/v1.0.0/external/solidity-foundry-boilerplate-banner.png" alt="wonderland banner" align="center" />
-<br />
+# Slash Contracts
+Slash Contracts is a repository containing Ethereum smart contract code for managing and displaying information about contracts and their attestations. This project aims to provide a simple and transparent way to store and verify the authenticity and trustworthiness of smart contracts. It can be useful for developers, auditors, and users who want to ensure that the code they interact with is secure and reliable.
 
-<div align="center"><strong>Start your next Solidity project with Foundry in seconds</strong></div>
-<div align="center">A highly scalable foundation focused on DX and best practices</div>
+## Overview
+The Slash Contracts system works by allowing users to add contracts to a registry along with relevant information. Attestors, who could be security experts or auditors, can then add attestations to the contracts, confirming their security and reliability. By accumulating attestations from multiple sources, the system creates a trust metric for each contract.
 
-<br />
+This process is beneficial for several reasons:
 
-## Features
+1. Increases trust in the smart contract ecosystem by providing a simple way to verify the security of contracts.
+2. Helps developers showcase their secure and well-audited contracts to potential users.
+3. Allows users to easily identify trustworthy contracts and avoid interacting with potentially harmful or insecure code.
 
-<dl>
-  <dt>Sample contracts</dt>
-  <dd>Basic Greeter contract with an external interface.</dd>
+## Who would want to use Slash Contracts
+Slash Contracts can be useful for:
 
-  <dt>Foundry setup</dt>
-  <dd>Foundry configuration with multiple custom profiles and remappings.</dd>
+- Developers: who want to demonstrate the security and reliability of their smart contracts.
+- Auditors and security experts: who want to provide attestations to contracts they have reviewed and confirmed as secure.
+- Users: who want to ensure that the contracts they interact with are trustworthy and reliable.
 
-  <dt>Deployment scripts</dt>
-  <dd>Sample scripts to deploy contracts on both mainnet and testnet.</dd>
+## Running
+This project uses the Foundry framework. Look at the package.json for the scripts.
 
-  <dt>Sample e2e & unit tests</dt>
-  <dd>Example tests showcasing mocking, assertions and configuration for mainnet forking. As well it includes everything needed in order to check code coverage.</dd>
-
-  <dt>Linter</dt>
-  <dd>Simple and fast solidity linting thanks to forge fmt</a>.</dd>
-
-  <dt>Github workflows CI</dt>
-  <dd>Run all tests and see the coverage as you push your changes.</dd>
-</dl>
-
-## Setup
-
-1. Install Foundry by following the instructions from [their repository](https://github.com/foundry-rs/foundry#installation).
-2. Copy the `.env.example` file to `.env` and fill in the variables
-3. Install the dependencies by running : `yarn install && forge install`
-
-## Build
-
-The default way to build the code is suboptimal but fast, you can run it via:
-
-```bash
-yarn build
-```
-
-In order to build a more optimized code ([via IR](https://docs.soliditylang.org/en/v0.8.15/ir-breaking-changes.html#solidity-ir-based-codegen-changes)), run:
-
-```bash
-yarn build:optimized
-```
-
-## Running tests
-
-Unit tests should be isolated from any externalities, while E2E usually run in a fork of the blockchain. In this boilerplate you will find example of both.
-
-In order to run both unit and E2E tests, run:
-
-```bash
-yarn test
-```
-
-In order to just run unit tests, run:
-
-```bash
-yarn test:unit
-```
-
-In order to run unit tests and run way more fuzzing than usual (5x), run:
-
-```bash
-yarn test:unit:deep
-```
-
-In order to just run e2e tests, run:
-
-```bash
-yarn test:e2e
-```
-
-In order to check your current code coverage, run:
-
-```bash
-yarn coverage
-```
-
-> **⚠ WARNING: Forge coverage is having some issues...**  
-> As stated in this [github issue](https://github.com/foundry-rs/foundry/issues/2165), checking the code coverage with Forge when using abstract contract is not currently working.
-
-<br>
-
-## Deploy & verify
-
-### Setup
-
-Configure the `.env` variables.
-
-### Rinkeby
-
-```bash
-yarn deploy:rinkeby
-```
-
-### Mainnet
-
-```bash
-yarn deploy:mainnet
-```
-
-The deployments are stored in ./broadcast
-
-See the [Foundry Book for available options](https://book.getfoundry.sh/reference/forge/forge-create.html).
+## Frontend Repository
+To display the contract information and interact with the contracts, an example PR was made https://github.com/alwaysbegrowing/arbor-frontend/pull/178.
